@@ -13,7 +13,7 @@ public class MonsterTest {
     assertEquals(0, m0.getRarity());
 
     Monster m4 = Monster.summonMonster(4);
-    assertEquals("ドラゴン", m4.getName());
+    assertEquals("キングドラゴン", m4.getName());
     assertEquals(4, m4.getRarity());
   }
 
@@ -23,5 +23,19 @@ public class MonsterTest {
     Monster invalid = Monster.summonMonster(9);
     assertEquals("不明なモンスター", invalid.getName());
     assertEquals(9, invalid.getRarity());
+  }
+
+  @Test
+  public void testKingPrefixAddedForRarity3() {
+    Monster m3 = Monster.summonMonster(3);
+    assertEquals("キングバンパイア", m3.getName());
+    assertEquals(3, m3.getRarity());
+  }
+
+  @Test
+  public void testNoKingPrefixForUnknownMonster() {
+    Monster unknown = Monster.summonMonster(99);
+    assertEquals("不明なモンスター", unknown.getName());
+    assertEquals(99, unknown.getRarity());
   }
 }
