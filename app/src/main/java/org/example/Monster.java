@@ -47,7 +47,14 @@ public class Monster {
       default:
         name = "不明なモンスター";
         break; // エラー対策
+
     }
+    // summonMonster() 内で進化処理を完結
+    if (rarity >= 3 && !name.equals("不明なモンスター")) {
+      name = "キング" + name;
+    }
+
     return new Monster(name, rarity);
+
   }
 }
