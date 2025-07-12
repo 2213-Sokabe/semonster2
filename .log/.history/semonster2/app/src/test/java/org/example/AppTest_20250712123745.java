@@ -13,3 +13,4 @@ public class App {
     System.out.println(monster); // デュラハン:レア度[2]
   }
 }
+
